@@ -1,6 +1,6 @@
 <div align="center"> 
-<p>
-    <img style="width:150px;" src="assets/logo.png" alt="BeeRocketry Logo" />
+<p style="width=150px;">
+    <img src="https://github.com/btnrv/BeeRocketry_RocketGroundStation/blob/main/Assets/logo.png" width="150"/>
 </p>
 
 # BeeRocketry 2024 Rocket Ground Station
