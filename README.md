@@ -62,11 +62,8 @@ Once you have confirmed that your packet format is correct:
 ## Demonstrations
 
 <p align="center">
-    <img src="https://github.com/btnrv/BeeRocketry_RocketGroundStation/blob/main/Assets/ss1.png" style="width:150px%; margin:5px;" />
-    <img src="https://github.com/btnrv/BeeRocketry_RocketGroundStation/blob/main/Assets/ss2.png" style="width:150px%; margin:5px;" />
-</p>
-<p align="center">
-    <img src="assets/demo.gif" alt="Demonstration GIF" style="width:70%; margin:5px;" />
+    <img src="https://github.com/btnrv/BeeRocketry_RocketGroundStation/blob/main/Assets/ss1.png" style="width:45%; margin:5px;" />
+    <img src="https://github.com/btnrv/BeeRocketry_RocketGroundStation/blob/main/Assets/ss2.png" style="width:45%; margin:5px;" />
 </p>
 
 ## Known Limitations
