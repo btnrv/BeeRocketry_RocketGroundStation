@@ -171,6 +171,10 @@ class RocketInterface(QMainWindow):
         self.rypGraph.reset()
         self.packageInfoWidget.reset()
         self.update_data(DataPacket())
+        
+    def closeEvent(self, event):
+        self.serialWidget.stop_transfer()
+        event.accept()
 
 def handle_keyboard_interrupt(signum, frame):
     rocket_interface.serialWidget.stop_transfer()
