@@ -172,8 +172,15 @@ class RocketInterface(QMainWindow):
         self.packageInfoWidget.reset()
         self.update_data(DataPacket())
 
+    def shutdown(self):
+        self.serialWidget.stop_transfer()
+
+    def closeEvent(self, event):
+        self.shutdown()
+        event.accept()
+
 def handle_keyboard_interrupt(signum, frame):
-    rocket_interface.serialWidget.stop_transfer()
+    rocket_interface.shutdown()
     QApplication.quit()
 
 if __name__ == "__main__":

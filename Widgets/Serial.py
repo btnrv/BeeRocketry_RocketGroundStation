@@ -225,9 +225,9 @@ class SerialWidget(QWidget):
             if self.serial_sending:
                 self.serial_sending.close()
             if (reading_port != "-1") & (sending_port != "-1"):
-                self.serial_reading = serial.Serial(reading_port, baudrate_reading)
+                self.serial_reading = serial.Serial(reading_port, baudrate_reading, timeout=1)
                 self.serial_sending = serial.Serial(sending_port, baudrate_sending)
-                self.transfer_thread = threading.Thread(target=self.transfer_data)
+                self.transfer_thread = threading.Thread(target=self.transfer_data, daemon=True)
                 self.transfer_thread.start()
         except Exception as e:
             QMessageBox.critical(self, "Connection Error", f"Failed to connect: {str(e)}")
@@ -251,13 +251,8 @@ class SerialWidget(QWidget):
         if self.serial_sending:
             self.serial_sending.close()
         if hasattr(self, 'transfer_thread') and self.transfer_thread.is_alive():
-            self.transfer_thread.join()
+            self.transfer_thread.join(timeout=2)
         print("Serial communication closed.")
-
-    def closeEvent(self, event):
-        self.stop_transfer()
-        event.accept()
-        QApplication.quit()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
